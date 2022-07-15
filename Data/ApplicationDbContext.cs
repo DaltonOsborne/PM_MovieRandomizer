@@ -18,7 +18,7 @@ namespace PM_MovieRandomizer.Data
         {
             modelBuilder.Entity<Movie>().HasData(new Movie
             {
-                Id = Guid.Parse("9792CB5B - 09A3 - 4B49 - 94A1 - 036D494B1BBE"),
+                Id = Guid.Parse("F11DDDA7-BB09-4D47-8DA6-26F2065F15C8"),
                 Title = "Pokemon: The First Movie",
                 ReleaseDate = DateTime.Parse("06-08-1998"),
                 OpeningWeekendSales = 345345345,
