@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PM_MovieRandomizer.Models;
 
 namespace PM_MovieRandomizer.Data
 {
