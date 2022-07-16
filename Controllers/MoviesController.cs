@@ -11,7 +11,6 @@ using PM_MovieRandomizer.Models;
 
 namespace PM_MovieRandomizer.Controllers
 {
-    [Authorize]
     public class MoviesController : Controller
     {
         private readonly ApplicationDbContext _context;
