@@ -1,4 +1,6 @@
-﻿namespace PM_MovieRandomizer.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace PM_MovieRandomizer.Models
 {
     public class Movie
     {
@@ -9,6 +11,8 @@
         public double OpeningWeekendSales { get; set; }
 
         public double TotalSales { get; set; }
+        [NotMapped]
+        public string Director { get { return "potatoe head"; } }
     }
     public enum Rating
     {

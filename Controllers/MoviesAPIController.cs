@@ -10,6 +10,11 @@ using PM_MovieRandomizer.Models;
 
 namespace PM_MovieRandomizer.Controllers
 {
+
+    public class MoviesQuery { 
+        public string Title { get; set; }
+    }
+
     [Route("api/[controller]")]
     [ApiController]
     public class MoviesAPIController : ControllerBase
@@ -23,13 +28,29 @@ namespace PM_MovieRandomizer.Controllers
 
         // GET: api/MoviesAPI
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
+        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies(string? title = null, Rating? rating = null)
         {
           if (_context.Movies == null)
           {
               return NotFound();
           }
+
+          if (title == null && rating != null)
+            {
+                return await GetMoviesByTitle(title, rating);
+            }
+
             return await _context.Movies.ToListAsync();
+        }
+
+        
+        public async Task<ActionResult<IEnumerable<Movie>>> GetMoviesByTitle(string? title, Rating? rating)
+        {
+            if (_context.Movies == null)
+            {
+                return NotFound();
+            }
+            return await _context.Movies.Where(m => m.Title == title && m.Rating == rating). ToListAsync();
         }
 
         // GET: api/MoviesAPI/5
