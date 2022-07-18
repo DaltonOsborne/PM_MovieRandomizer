@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PM_MovieRandomizer.Data;
 using PM_MovieRandomizer.Models;
+using PM_MovieRandomizer.Repositories;
 
 namespace PM_MovieRandomizer.Controllers
 {
@@ -26,8 +27,30 @@ namespace PM_MovieRandomizer.Controllers
             _context = context;
         }
 
-        // GET: api/MoviesAPI
         [HttpGet]
+        [Route("random")]
+        public async Task<ActionResult<Movie>> GetRandomMovie()
+        {
+            if (_context.Movies == null)
+            {
+                return NotFound();
+            }
+
+
+            var randMovie = await MoviesRepository.GetRandomMovieAsync(_context);
+
+
+            if (randMovie == null)
+            {
+                return NotFound();
+            }
+
+            return randMovie;
+
+        }
+
+            // GET: api/MoviesAPI
+            [HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> GetMovies(string? title = null, Rating? rating = null)
         {
           if (_context.Movies == null)
