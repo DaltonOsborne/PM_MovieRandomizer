@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PM_MovieRandomizer.Data;
 using PM_MovieRandomizer.Models;
+using PM_MovieRandomizer.Repositories;
 
 namespace PM_MovieRandomizer.Controllers
 {
@@ -18,6 +19,18 @@ namespace PM_MovieRandomizer.Controllers
         public MoviesController(ApplicationDbContext context)
         {
             _context = context;
+        }
+
+        [Route("Random")]
+        public async Task<IActionResult> GetRandomMovie()
+        {
+            var randMovie = await MoviesRepository.GetRandomMovieAsync(_context);
+            if (randMovie == null)
+            {
+                return NotFound();
+            }
+
+            return View("Random",randMovie);
         }
 
         // GET: Movies
