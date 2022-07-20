@@ -14,7 +14,7 @@ namespace PM_MovieRandomizer.Models
         [NotMapped]
         public string Director { get { return "Kunihiko Yuyama"; } }
         [NotMapped]
-        public string Url { get { return $"https://www.google.com/search?q=rent{Title}";  } }
+        public string Url { get { return $"https://www.google.com/search?q=rent {Title}";  } }
     }
     public enum Rating
     {
