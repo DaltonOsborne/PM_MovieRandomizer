@@ -9,7 +9,7 @@ namespace PM_MovieRandomizer.Models
         public DateTime ReleaseDate { get; set; }
         public Rating Rating { get; set; }
         public double OpeningWeekendSales { get; set; }
-
+        [NotMapped]
         public double TotalSales { get; set; }
         [NotMapped]
         public string Director { get { return "Kunihiko Yuyama"; } }
