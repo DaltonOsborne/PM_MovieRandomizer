@@ -118,7 +118,7 @@ namespace PM_MovieRandomizer.Data
 
             modelBuilder.Entity<Movie>().HasData(new Movie
             {
-                Id = Guid.Parse("00463795-12f5-43cf-8d5f-6625f923b0c0"),
+                Id = Guid.Parse("a68b0e49-d999-4a65-8b61-75351fbbb140"),
                 Title = "The Rise of Darkrai",
                 ReleaseDate = DateTime.Parse("6/24/2007 "),
                 OpeningWeekendSales = 345345345,
