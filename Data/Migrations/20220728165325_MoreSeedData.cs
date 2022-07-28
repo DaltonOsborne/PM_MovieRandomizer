@@ -18,7 +18,7 @@ namespace PM_MovieRandomizer.Data.Migrations
                 columns: new[] { "Id", "OpeningWeekendSales", "Rating", "ReleaseDate", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("00463795-12f5-43cf-8d5f-6625f923b0c0"), 345345345.0, 0, new DateTime(2007, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Rise of Darkrai" },
+                    { new Guid("a68b0e49-d999-4a65-8b61-75351fbbb140"), 345345345.0, 0, new DateTime(2007, 6, 24, 0, 0, 0, 0, DateTimeKind.Unspecified), "The Rise of Darkrai" },
                     { new Guid("05fcfd45-9640-44e5-a9c8-474771bb0f0d"), 345345345.0, 0, new DateTime(2019, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified), "Mewtwo Strikes Back:Evolution" },
                     { new Guid("0b563a12-95fe-4b3b-b064-2b313d9e8fad"), 345345345.0, 0, new DateTime(1999, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pokemon:The Movie 2000" },
                     { new Guid("0f01cf4c-ada8-47bf-851c-54511fcc9452"), 345345345.0, 0, new DateTime(2013, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified), "Genesect and the Legend Awakened" },
